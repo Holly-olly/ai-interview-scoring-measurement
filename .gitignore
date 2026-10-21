@@ -1,0 +1,78 @@
+# Raw dataset — 15 GB, never commit (download separately from HuggingFace)
+recruitview_train/
+
+# Internal planning docs & working context — public roadmap lives in README
+CLAUDE.md
+docs/*_plan.md
+.claude/
+
+# Part 2 LLM scorer — row-level outputs, keep local (publish policy)
+outputs/stage5_llm/
+
+# RecruitView-derived data — gated dataset (CC BY-NC 4.0); keep local, regenerate via src/
+data/recruitview_full.csv
+data/recruitview_analysis.csv
+# Problem-solving G-study: answer-level scores (gated); regenerate via experiments/.../build_ps_gtheory_dataset.py
+03_problem_solving_gtheory/data/
+03_problem_solving_gtheory/analysis/work/
+# Full manual gender-coding log (protected); published slim as data/gender_by_response.csv
+data/recruitview_gender.csv
+# Free-text field-of-study labels (derived from gated transcripts); published slim as data/field_by_user.csv
+data/field_by_user_raw.csv
+
+# Local-only working areas
+reading_list/
+scratch/
+archive/
+reviews/
+docs/
+experiments/
+
+# Outputs: publish only the aggregate result tables + question metadata used by the notebook.
+# Ignore per-person BLUP scores (person-level, gated data) and unused / intermediate artifacts.
+outputs/stage2_human/human_person_scores_blup.csv
+outputs/stage3_teas/teas_person_scores_blup.csv
+outputs/stage1_overview/answer_trait_cosine.csv
+outputs/stage3_teas/teas_length_ladder.csv
+# Dedup review artifacts contain transcripts + scores (gated); keep local, never publish
+outputs/stage1_overview/duplicate_responses_review.csv
+outputs/stage1_overview/duplicate_responses_review.md
+
+# WIP / parked / superseded analysis scripts; publish when ready (not part of this release)
+src/stage2_answer_trait_cosine.py
+src/stage2_human_tables.py
+src/stage3_response_matrix.py
+src/stage3_teas_reml_crosscheck.py
+src/stage4_convergence.py
+src/stage4_distributions.py
+src/stage4_interscale_corr.py
+src/stage4_master_table.py
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Keep agent config local
+.claude/settings.local.json
+.env
+
+
+# 2026-10-21: published in waves (docs/handoff/REPO_PLAN_2026-10-21.md). Wave 1 = README, 02_evidence_weighted/,
+# 03_problem_solving_gtheory/. Not published yet: shared code, data layer, zero-shot report, old outputs.
+/src/
+/data/
+/outputs/
+/notebooks/
+/Report_LLM_zero_shot.md
+/Report_human_vs_LLM.md
+/llm-as-judge/
+/tests/
+# Every table and log stays local for now (docs/handoff/DATA_FILES.md)
+*.csv
+*.jsonl

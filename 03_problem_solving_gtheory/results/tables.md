@@ -1,0 +1,94 @@
+Answers: 1885; persons: 328; questions: 76. G-study sample (zero-shot rated 1 to 5 and an evidence-weighted score): 610 answers, 265 persons, 61 questions. Persons with both covariates: 265; Spearman between the two covariates: 0.69. Bootstrap draws: 500 parametric, 200 person-cluster. Singular fits: cov_length, cov_quality, level_3.
+
+**Table 1. Sample by problem-solving activation of the question**
+
+| Activation | Questions | Answers | Zero-shot rated 1-5 | Evidence-weighted score | Both (G-study) | Persons | Persons with 2+ answers |
+|---|---|---|---|---|---|---|---|
+| 1 | 66 | 1682 | 559 (33.2%) | 543 (32.3%) | 453 (26.9%) | 225 | 144 |
+| 2 | 6 | 120 | 101 (84.2%) | 86 (71.7%) | 85 (70.8%) | 85 | 0 |
+| 3 | 4 | 83 | 73 (88.0%) | 74 (89.2%) | 72 (86.7%) | 72 | 0 |
+| all | 76 | 1885 | 733 (38.9%) | 703 (37.3%) | 610 (32.4%) | 265 | 188 |
+
+**Table 2. Score levels (answers)**
+
+| level | zero_shot_all | zero_shot_sample | answer_quality_all | answer_quality_sample |
+|---|---|---|---|---|
+| 0 | 1152 | 0 | 16 | 0 |
+| 1 | 249 | 137 | 139 | 15 |
+| 2 | 222 | 212 | 874 | 239 |
+| 3 | 249 | 248 | 578 | 205 |
+| 4 | 12 | 12 | 240 | 123 |
+| 5 | 1 | 1 | 38 | 28 |
+
+**Table 3. Score distributions**
+
+| measure | n | mean | sd | min | q1 | median | q3 | max |
+|---|---|---|---|---|---|---|---|---|
+| zero-shot, answers rated 1 to 5 | 733 | 2.04 | 0.87 | 1.0 | 1.0 | 2.0 | 3.0 | 5.0 |
+| zero-shot, G-study sample | 610 | 2.23 | 0.82 | 1.0 | 2.0 | 2.0 | 3.0 | 5.0 |
+| evidence-weighted, answers with a score | 703 | 2.92 | 0.79 | 1.0 | 3.0 | 3.0 | 3.0 | 5.0 |
+| evidence-weighted, G-study sample | 610 | 2.98 | 0.79 | 1.0 | 3.0 | 3.0 | 3.0 | 5.0 |
+| answer quality, answers rated 1 to 5 | 1869 | 2.55 | 0.88 | 1.0 | 2.0 | 2.0 | 3.0 | 5.0 |
+| answer quality, G-study sample | 610 | 2.85 | 0.92 | 1.0 | 2.0 | 3.0 | 3.0 | 5.0 |
+| answer length (tokens), all answers | 1885 | 69.89 | 41.82 | 6.0 | 36.0 | 60.0 | 98.0 | 219.0 |
+| answer length (tokens), G-study sample | 610 | 92.76 | 42.28 | 10.0 | 58.0 | 89.0 | 123.0 | 210.0 |
+
+**Table 4. Spearman correlations between scores, G-study sample**
+
+| Activation | Answers | Zero-shot, evidence-weighted | Zero-shot, answer quality | Evidence-weighted, answer quality | Zero-shot, length | Evidence-weighted, length |
+|---|---|---|---|---|---|---|
+| 1 | 453 | .51 | .62 | .45 | .36 | .19 |
+| 2 | 85 | .66 | .74 | .62 | .28 | .16 |
+| 3 | 72 | .72 | .71 | .56 | .26 | .14 |
+| all | 610 | .56 | .64 | .48 | .34 | .18 |
+
+**Table 5. Variance components (scores standardized within method)**
+
+| Source | p x q x m: variance | p x q x m: 95% CI | p x q x m: % | p x (q:a) x m: variance | p x (q:a) x m: 95% CI | p x (q:a) x m: % |
+|---|---|---|---|---|---|---|
+| Person (p) | 0.273 | [0.181, 0.359] | 26.7 | 0.270 | [0.151, 0.364] | 26.2 |
+| Person x activation (pa) |  |  |  | 0.014 | [0.000, 0.126] | 1.4 |
+| Person x method (pm) | 0.002 | [0.000, 0.035] | 0.2 | 0.002 | [0.000, 0.035] | 0.2 |
+| Question (q) | 0.058 | [0.014, 0.113] | 5.7 | 0.062 | [0.015, 0.120] | 6.1 |
+| Question x method (qm) | 0.019 | [0.001, 0.044] | 1.9 | 0.021 | [0.002, 0.042] | 2.0 |
+| Person x question (pq) | 0.270 | [0.199, 0.356] | 26.4 | 0.260 | [0.176, 0.340] | 25.3 |
+| Residual (pqm,e) | 0.401 | [0.345, 0.443] | 39.2 | 0.400 | [0.342, 0.447] | 38.9 |
+| Total | 1.022 |  | 100.0 | 1.029 |  | 100.0 |
+
+**Table 6. D-study**
+
+| Questions | E-rho2, 1 method | Phi, 1 method | E-rho2, 2 methods | Phi, 2 methods | E-rho2 with activation, 1 method |
+|---|---|---|---|---|---|
+| 1 | .29 [.20, .36] | .27 [.18, .34] | .37 [.26, .45] | .34 [.23, .42] |  |
+| 2 | .45 [.34, .53] | .42 [.31, .50] | .54 [.41, .62] | .50 [.38, .59] |  |
+| 3 | .55 [.42, .63] | .52 [.39, .60] | .63 [.51, .71] | .60 [.47, .69] | .55 [.43, .64] |
+| 4 | .62 [.49, .69] | .59 [.46, .67] | .70 [.58, .77] | .67 [.54, .74] |  |
+| 6 | .71 [.57, .77] | .68 [.55, .75] | .78 [.67, .83] | .75 [.63, .81] | .71 [.58, .78] |
+| 8 | .76 [.63, .82] | .74 [.61, .80] | .82 [.72, .87] | .80 [.69, .85] |  |
+| 10 | .80 [.68, .85] | .78 [.66, .83] | .85 [.75, .89] | .83 [.73, .88] |  |
+| 12 | .83 [.71, .87] | .81 [.69, .86] | .87 [.78, .91] | .86 [.76, .90] | .83 [.71, .88] |
+
+**Table 7. Agreement of the two methods by activation level**
+
+| Activation | Questions | Answers | Answer variance | Question | Question x method | Residual | Agreement |
+|---|---|---|---|---|---|---|---|
+| 1 | 51 | 453 | 0.429 [0.348, 0.519] | 0.055 | 0.019 | 0.408 | .51 [.44, .59] |
+| 2 | 6 | 85 | 0.708 [0.463, 0.998] | 0.122 | 0.024 | 0.408 | .63 [.51, .74] |
+| 3 | 4 | 72 | 0.948 [0.608, 1.388] | 0.000 | 0.017 | 0.362 | .72 [.59, .82] |
+
+**Table 8. Person variance with person covariates of the other answers**
+
+| Covariates | Person variance | Share left [95% CI] | Answer quality: EW (SE); ZS - EW (SE) | Answer length: EW (SE); ZS - EW (SE) |
+|---|---|---|---|---|
+| none | 0.270 [0.162, 0.367] | 1.00 |  |  |
+| answer length | 0.201 [0.125, 0.277] | .74 [.51, .89] |  | 0.23 (0.05); 0.12 (0.04) |
+| answer quality | 0.112 [0.025, 0.184] | .42 [.08, .64] | 0.35 (0.04); 0.09 (0.04) |  |
+| answer quality + answer length | 0.114 [0.028, 0.182] | .42 [.11, .61] | 0.38 (0.05); 0.03 (0.05) | -0.05 (0.06); 0.10 (0.05) |
+
+**Table 9. Answer quality of the other answers by activation level**
+
+| Activation | Evidence-weighted (SE) | Zero-shot | ZS - EW (SE) | Answer variance, without -> with |
+|---|---|---|---|---|
+| 1 | 0.26 (0.04) | 0.39 | 0.13 (0.04) | 0.429 -> 0.323 |
+| 2 | 0.60 (0.10) | 0.47 | -0.13 (0.10) | 0.708 -> 0.430 |
+| 3 | 0.61 (0.14) | 0.62 | 0.01 (0.12) | 0.948 -> 0.684 |
