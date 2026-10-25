@@ -15,6 +15,9 @@ data/recruitview_analysis.csv
 # Problem-solving G-study: answer-level scores (gated); regenerate via experiments/.../build_ps_gtheory_dataset.py
 03_problem_solving_gtheory/data/
 03_problem_solving_gtheory/analysis/work/
+# Scoring audit: answer-level scores (gated); regenerate via src/build_scoring_audit_dataset.py
+01_scoring_audit/data/
+01_scoring_audit/analysis/work/
 # Full manual gender-coding log (protected); published slim as data/gender_by_response.csv
 data/recruitview_gender.csv
 # Free-text field-of-study labels (derived from gated transcripts); published slim as data/field_by_user.csv

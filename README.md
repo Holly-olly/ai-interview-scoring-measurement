@@ -22,11 +22,20 @@ repository shows four parts of that work:
 
 | | Summary | Question |
 |---|---|---|
-| 1 | Scoring audit: human ratings, the dataset's AI report and a zero-shot scorer *(coming)* | Do the scores of different methods agree, and what drives them? |
+| 1 | [Scoring audit: human ratings, the dataset's AI report and a zero-shot scorer](01_scoring_audit/SUMMARY.md) | How reliable is each method, do the methods agree, and what drives the scores? |
 | 2 | [Evidence-weighted interview scoring](02_evidence_weighted/SUMMARY.md) | Can a score be transparent and less driven by answer length, and what does that cost? |
 | 3 | [What a problem-solving score measures](03_problem_solving_gtheory/SUMMARY.md) | Is the score the person, the question asked, or a general skill at answering well? |
 
-Key results so far (problem solving, 1,885 answers):
+Key results so far, scoring audit (seven scales, three methods, 1,885 answers):
+
+- On a single answer, persons account for 10% to 48% of the score variance; the zero-shot rating of the transcript
+  has the largest share on four of seven scales.
+- Person effects of human ratings and of the numeric coding of the AI report correlate negatively on all seven
+  scales (-.23 to -.63).
+- Longer answers go with less favourable human ratings and more favourable language-model scores.
+- At a fixed length, shuffled or random words turn most zero-shot ratings into "not estimable".
+
+Problem solving (summaries 2 and 3, 1,885 answers):
 
 - A zero-shot rating and the evidence-weighted score, given the same definition and rating scale, **order candidates
   the same way** (both are judgments of the same model); only the evidence-weighted score shows which quotes each
@@ -38,10 +47,11 @@ Key results so far (problem solving, 1,885 answers):
 
 ## Terms
 
-- **Person variance:** the share of score variance due to stable differences between candidates.
+- **Person variance (person share):** the share of score variance due to stable differences between candidates.
 - **Facet:** a source of variation in the design, such as question, scoring method or question activation.
 - **E-rho2 (generalizability coefficient):** reliability of a candidate's score averaged over a number of questions,
-  for ranking candidates. **Phi:** the same for absolute decisions.
+  for ranking candidates who answered the same questions. **Phi:** the same with differences between questions
+  counted as error; it applies to absolute decisions and to candidates who answered different questions.
 - **D-study:** how reliability changes with the number of questions or scoring methods.
 - **Question activation:** how much a question calls for the competency (trait activation theory).
 
@@ -49,6 +59,7 @@ Key results so far (problem solving, 1,885 answers):
 
 ```
 README.md
+01_scoring_audit/              summary, analysis scripts (reliability, answer length, agreement, negative control)
 02_evidence_weighted/          summary, prompts of every stage, one answer through the pipeline
 03_problem_solving_gtheory/    summary, full report, analysis script, result tables and figures
 ```
@@ -59,8 +70,8 @@ RecruitView (Gupta et al., 2025) is a gated dataset licensed CC BY-NC 4.0 (acade
 does not redistribute it; access can be requested at
 [huggingface.co/datasets/AI4A-lab/RecruitView](https://huggingface.co/datasets/AI4A-lab/RecruitView). Only aggregate
 results are shared here, plus one answer used as a worked example. The dataset's human ratings are pairwise-derived
-z-scores within question; they are not analysed in the summaries published so far. This is research on measurement
-properties of interview scoring; it is not a hiring tool.
+z-scores within question; they are analysed in summary 1. This is research on measurement properties of interview
+scoring; it is not a hiring tool.
 
 Gupta, A. K., Sheth, F., Shaikh, H., Kumar, D., Puniya, A., Panwar, D., Chaurasia, S., & Mathur, P. (2025).
 *RecruitView: A multimodal dataset for predicting personality and interview performance for human resources
