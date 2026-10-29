@@ -120,6 +120,28 @@ evidence-weighted .18. On all scored answers: zero-shot .40 (733 answers), evide
 evidence-weighted score the length coefficient is 0.19 (SE 0.04) and the person variance 0.107 without and 0.091 with
 length.
 
+## Negative control of the zero-shot rating
+
+Of the 1,885 answers, the zero-shot rating scored 733 at 1 to 5. 240 of them (173 persons) were selected evenly across
+the length quartiles of the 733, 60 per quartile, and rated again with the same prompt, model and temperature in four
+conditions: intact; word shuffle (the same words in random order); random words (as many random corpus words as the
+answer has); another answer of the same person to a different question, one in which the original zero-shot run found
+no problem-solving behaviour (rating 0, not estimable), shown under the question of the target answer.
+
+| Condition | All | 10 to 54 words | 55 to 82 | 83 to 118 | 119 to 217 |
+|---|---|---|---|---|---|
+| Intact | 6% | 7% | 8% | 8% | 0% |
+| Word shuffle | 78% | 92% | 75% | 75% | 68% |
+| Random words | 100% | 100% | 100% | 100% | 100% |
+| Another answer of the same person | 98% | 93% | 98% | 100% | 98% |
+
+*Note.* Share of ratings "not estimable". Mean of the ratings given, all answers: original run 2.10, intact 2.16, word
+shuffle 1.93 (54 answers), another answer of the same person 1.17 (6 answers). The intact re-rating gives 207 of the
+240 answers the original rating, 32 differ by 1 and 1 by 2. Under word shuffle a rating is kept in 38 of 88 answers
+rated 3 in the original run and in 5 of 5 rated 4, against 11 of 147 rated 1 or 2; within each original rating the
+share kept shows no steady rise with length. Longer groups have more answers rated 3 (original mean 1.57, 1.97, 2.42,
+2.43 from the shortest group to the longest).
+
 ## Costs of the evidence-weighted score
 
 - **Coverage.** A score exists only where the answer contains evidence: 703 of 1,885 answers (37%), 273 of 328

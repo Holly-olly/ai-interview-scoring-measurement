@@ -41,6 +41,9 @@ Problem solving (summaries 2 and 3, 1,885 answers):
   the same way** (both are judgments of the same model); only the evidence-weighted score shows which quotes each
   score rests on, and it depends less on answer length.
 - The evidence-weighted score covers fewer answers (37%) and on its own is less reliable.
+- At a fixed length, shuffled or random words make the zero-shot rating "not estimable" in 78% and 100% of 240 rated
+  answers (60 in each of four length groups); another answer of the same candidate in which the original run found no
+  problem-solving behaviour, placed under the question, is rated in 6 of 240. Ratings kept after shuffling come mostly from answers rated 3 or higher.
 - About a quarter of the score variance is the candidate; **most of it is shared with the answer quality of the
   candidate's other answers**. Questions that call for problem solving give more to score and more agreement between
   the two methods.
